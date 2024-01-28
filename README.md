@@ -1,6 +1,8 @@
 # ID-Card-Generator
 ## 🔍 Overview:
+![alt text](https://i.imgur.com/vN5LWqx.png)
 IDCard Generator is a powerful and user-friendly web application designed specifically for HR professionals and administrators. This innovative tool simplifies the process of creating personalized employee ID cards with ease. The web app comes equipped with a convenient print template feature, allowing you to effortlessly print the generated ID cards.
+![alt text](https://i.imgur.com/NUsVj0p.png)
 ## 🖼️ Features:
 1. User-Friendly Interface:
 The intuitive interface ensures a seamless experience for users, even with minimal technical expertise.
