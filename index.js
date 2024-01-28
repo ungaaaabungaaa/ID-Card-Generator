@@ -124,7 +124,7 @@ function addTextAndOverlayToFrontImage(name, empCode, overlaySrc) {
             overlayImg.src = overlaySrc;
         };
 
-        frontImg.src = 'templates/Front.jpeg';
+        frontImg.src = 'Templates/Front.jpeg';
     });
 }
 
@@ -162,7 +162,7 @@ function addTextToBackImage(emergencyContact, bloodGroup, empCode) {
                 });
         };
 
-        backImg.src = 'templates/back.jpeg';
+        backImg.src = 'Templates/back.jpeg';
     });
 }
 
