@@ -146,8 +146,8 @@ function addTextToBackImage(emergencyContact, bloodGroup, empCode) {
             ctx.fillStyle = 'black';
             ctx.fontWeight = 'normal';
 
-            ctx.fillText(emergencyContact, 360, 90);
-            ctx.fillText(bloodGroup, 360, 135);
+            ctx.fillText(bloodGroup, 360, 90);
+            ctx.fillText(emergencyContact, 360, 135);
 
             const backFileName = `${empCode}_Back_ID.jpg`;
             saveCanvasAsImage(canvas, backFileName)
