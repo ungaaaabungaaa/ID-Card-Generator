@@ -179,7 +179,7 @@ function validateFields() {
     // Define error messages
     const errorMessages = {
         name: 'Please Enter Name & Spaces',
-        empCode: 'EMP Code Should Be Exactly 6 Digits.',
+        empCode: 'Please Enter EMP CODE',
         emergencyContact: 'Emergency Contact Should Be Exactly 10 Digits.',
         bloodGroup: 'Please Select Blood Group.',
         image: 'Please Select An Image',
@@ -189,7 +189,7 @@ function validateFields() {
     // Check for errors
     const errors = [];
     if (nameInput === '') errors.push(errorMessages.name);
-    if (empCodeInput.length !== 6) errors.push(errorMessages.empCode);
+    if (empCodeInput.length === '') errors.push(errorMessages.empCode);
     if (emergencyContactInput.length !== 10) errors.push(errorMessages.emergencyContact);
     if (bloodGroupInput === '') errors.push(errorMessages.bloodGroup);
     if (!selectedImage) errors.push(errorMessages.image); // Validate if an image is selected
