@@ -106,24 +106,28 @@ document.getElementById('Card2').addEventListener('click', function () {
 });
 
 
-// Add event listener to trigger the overlay and rotate function
 document.getElementById('Print').addEventListener('click', function () {
     var card1Src = document.getElementById('Card1').src;
     var card2Src = document.getElementById('Card2').src;
-    if ((card1Src && card1Src !== 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7') &&
+    const blankImageSrc = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/w8AAwAB/aurfg0AAAAASUVORK5CYII="; // 1x1 white pixel
+
+    // Check if at least one image is selected
+    if ((card1Src && card1Src !== 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7') ||
         (card2Src && card2Src !== 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')) {
-        // Both images are selected
-        snackbar("Genrating Print Template");
+
+        // Use a blank image for any missing card images
+        card1Src = (card1Src && card1Src !== 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7') ? card1Src : blankImageSrc;
+        card2Src = (card2Src && card2Src !== 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7') ? card2Src : blankImageSrc;
+
+        snackbar("Generating Print Template");
         const overlayImageSources = [card1Src, card2Src];
         createCanvasAndDownload(overlayImageSources);
-    } else if (!card1Src || card1Src === 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7') {
-        snackbar("Card 1 image is missing.");
-    } else if (!card2Src || card2Src === 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7') {
-        snackbar("Card 2 image is missing.");
     } else {
-        snackbar("No images selected.");
+        // Neither image is selected
+        snackbar("At least one image must be selected.");
     }
 });
+
 
 
 // Function to reset selected images and hide snackbar
